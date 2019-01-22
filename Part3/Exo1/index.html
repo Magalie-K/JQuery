@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Titre de la page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <label for="number">Nombre de clic </label><input type="text" name="number" id="number" />
+    <button type="button" name="button" id="button" >Valider</button>
+
+  <script src="jquery-3.2.1.js"></script>
+  <script>
+  $("#button").click (function () {
+    var number = $("#number").val(); // déclaration de la variable number
+    number++; // on ajoute plus un à chaque clic
+    $("#number").val(number);
+  });
+  </script>
+</body>
+</html>

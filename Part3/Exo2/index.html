@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Exe 2 partie 3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <form>
+    <label for="number">Nombre de clic </label><input type="text" name="number" id="number" />
+    <button type="button" name="button" id="button1" >+</button>
+    <button type="button" name="button" id="button2" >-</button>
+  </form>
+
+  <script src="jquery-3.2.1.js"></script>
+  <script>
+
+$(function () {
+  $("#button1").click (function () {
+    var number = $("#number").val();
+    number++;
+  $("#number").val(number);
+  });
+
+  $("#button2").click (function () {
+    var number = $("#number").val();
+    number--;
+  $("#number").val(number);
+  });
+})
+
+  </script>
+</body>
+</html>

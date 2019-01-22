@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Exe 3 partie 3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <label for="number">trouvez un nombre entre 0 et 100 </label><input type="text" name="number" id="user" />
+    <button type="button" name="button" id="button" >Valider</button>
+
+  <script src="jquery-3.2.1.js"></script>
+
+  <script>
+  var number = Math.floor((Math.random() * 100) + 1); //vaiable qui créer un chiffre aléatoire à trouver.
+  var compteur = 0 //la variable de tentatives
+  var regex = /^\d{1,3}$/;
+  $("#button").on("click", function(){ //fonction click au bouton
+  var user = parseInt($("#user").val()); //variable du choix de l'utilisateur.
+      compteur++;
+
+  if (regex.test(user) && user<=100){  //le compteur qui monte à chaque click
+    if (number !== user) { //fonction if si le résultat n'est pas égal
+      if (user > number) { //si choix utilisateur est supérieur à celui de l'ordinateur
+        alert("Plus petit"); //réponse si valeur utilisateur supérieur à celle de l'ordinateur
+      } else { //si valeur utilisateur inférieur à celle de l'ordinateur alors
+        alert("Plus grand"); // réponse si valeur utilisateur inférieure à celle de l'ordinateur
+  }} else { //si valeur choix utilisateur et ordinateur sont égales
+      alert("Correct, Bravo ! Tu as fais "+ compteur +" tentatives.");//message bonne réponse
+  }}   else {
+        alert("le chiffre choisi doit être compris entre 0 et 100");}
+}) //fin de la fonction click.
+  </script>
+</body>
+</html>

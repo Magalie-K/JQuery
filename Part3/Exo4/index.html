@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Ex 4 partie 3</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <button type="button1" name="button1" id="button1">Taille</button>
+    <button type="button2" name="button2" id="button2">Vert</button>
+    <button type="button3" name="button3" id="button3">Reset</button>
+    <button type="button4" name="button4" id="button4">Disparaître</button>
+    <button type="button5" name="button5" id="button5">Réapparaître</button>
+    <div id="rectangle"></div>
+
+  <script src="jquery-3.2.1.js"></script>
+
+  <script>
+// lancement d'une action au clic sur le bouton #bouton1
+$(function () {
+  $("#button1").click(function(){ // si la hauteur est inferieur a 100px, on agrandit le rectangle de 10px
+    if( $("#rectangle").height() < 100 ) { //augmente de 10px la hauteur du rectangle
+      $("#rectangle").css("height", $("#rectangle").height()+10);
+    } else { // sinon, on remet la valeur a 10px
+      $("#rectangle").css("height", "10px");
+    }
+  });
+
+  $("#button2").click(function() {
+  $("#rectangle").css("background-color", "green");
+});
+
+  $("#button3").click(function() {
+  $("#rectangle").css("background-color", "");
+});
+
+  $("#button4").click(function() {
+  $("#rectangle").hide();
+});
+
+  $("#button5").click(function() {
+  $("#rectangle").show();
+});
+});
+  </script>
+</body>
+</html>
